@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OGE English 2026 Trainer | Reading & Grammar</title>
+    <style>
+        :root {
+            --primary: #6C5CE7;
+            --secondary: #00CEC9;
+            --accent: #FDCB6E;
+            --danger: #FF7675;
+            --dark: #2D3436;
+            --light: #F8F9FA;
+            --success: #00B894;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(255,255,255,0.95);
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 { 
+            margin: 0; 
+            font-size: 2rem; 
+            color: var(--primary);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+        header p { 
+            margin: 5px 0 0;
+            opacity: 0.8; 
+            font-size: 1rem; 
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .badge-reading { background: #74b9ff; color: white; }
+        .badge-grammar { background: #fdcb6e; color: #2d3436; }
+
+        .section-title {
+            color: var(--primary);
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+            margin: 0 0 1.2rem 0;
+            padding-bottom: 0.4rem;
+            font-size: 1.4rem;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary), #5f4bc4);
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            margin: 8px 4px;
+            box-shadow: 0 4px 12px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 18px rgba(108, 92, 231, 0.6);
+        }
+        
+        .btn-outline { 
+            background: transparent; 
+            border: 2px solid var(--primary); 
+            color: var(--primary); 
+        }
+        .btn-outline:hover { 
+            background: var(--primary); 
+            color: white; 
+        }
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Reading Section Styles */
+        .reading-text {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            border-left: 4px solid var(--secondary);
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .question-text {
+            font-weight: 600;
+            margin: 15px 0 10px;
+            font-size: 1.05rem;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .option-btn {
+            background: white;
+            border: 2px solid #dfe6e9;
+            padding: 12px 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .option-btn:hover { 
+            border-color: var(--primary); 
+            background: #f8f9ff;
+            transform: translateY(-1px);
+        }
+        
+        .option-btn.selected {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        .option-btn.correct { 
+            background: var(--success); 
+            color: white; 
+            border-color: var(--success); 
+            animation: pulse 0.4s;
+        }
+        .option-btn.wrong { 
+            background: var(--danger); 
+            color: white; 
+            border-color: var(--danger); 
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+        /* Grammar Input Styles */
+        .grammar-task {
+            background: #fff9e6;
+            padding: 15px;
+            border-radius: 12px;
+            margin: 10px 0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .base-word {
+            display: inline-block;
+            background: var(--accent);
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+
+        .word-input {
+            padding: 10px 15px;
+            border: 2px solid #dfe6e9;
+            border-radius: 10px;
+            font-size: 1rem;
+            width: 100%;
+            max-width: 250px;
+            margin: 10px 0;
+            transition: border-color 0.3s;
+        }
+        .word-input:focus { 
+            border-color: var(--primary); 
+            outline: none; 
+            box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.2);
+        }
+
+        /* Feedback */
+        .feedback {
+            margin-top: 12px;
+            padding: 12px 15px;
+            border-radius: 10px;
+            font-weight: 500;
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .feedback.show { display: block; }
+        .feedback.success { 
+            background: linear-gradient(135deg, #00b894, #00cec9); 
+            color: white; 
+        }
+        .feedback.error { 
+            background: linear-gradient(135deg, #ff7675, #fd79a8); 
+            color: white; 
+        }
+
+        /* Progress Bar */
+        .progress-container {
+            background: rgba(255,255,255,0.3);
+            border-radius: 10px;
+            padding: 8px 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .progress-bar {
+            flex: 1;
+            height: 12px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--success), var(--secondary));
+            border-radius: 6px;
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+        .progress-text {
+            font-weight: 600;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        /* Results Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(45, 52, 54, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            animation: modalSlide 0.4s ease;
+        }
+        @keyframes modalSlide {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), #f39c12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 25px rgba(253, 203, 110, 0.5);
+        }
+        
+        .weakness-list { 
+            text-align: left; 
+            background: #fff8e1; 
+            padding: 18px; 
+            border-radius: 12px; 
+            margin: 15px 0;
+            border-left: 4px solid var(--accent);
+        }
+        .weakness-list li { margin: 8px 0; }
+
+        .hidden { display: none !important; }
+        
+        /* Confetti animation for perfect score */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            animation: fall 3s linear forwards;
+            z-index: 999;
+            pointer-events: none;
+        }
+        @keyframes fall {
+            to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6rem; }
+            .card { padding: 1.3rem; }
+            .options-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>🎓 OGE English 2026 Trainer</h1>
+    <p>Разделы: Чтение • Грамматика и лексика</p>
+</header>
+
+<div class="container" id="app">
+    <!-- Start Screen -->
+    <div id="start-screen" class="card" style="text-align: center;">
+        <h2 style="color: var(--primary); margin-top: 0;">Готов к тренировке?</h2>
+        <p>Тренажер для отработки письменной части ОГЭ по английскому языку (2026)</p>
+        
+        <div style="background: #f8f9ff; padding: 15px; border-radius: 12px; margin: 20px 0; text-align: left;">
+            <strong>📋 Что тебя ждёт:</strong>
+            <ul style="margin: 10px 0 0 20px; padding: 0;">
+                <li>📖 <strong>Чтение:</strong> True/False/Not Stated, matching</li>
+                <li>✍️ <strong>Грамматика:</strong> Word Formation, tense practice</li>
+                <li>🔄 <strong>Рандом:</strong> новые задания при каждом запуске</li>
+                <li>📊 <strong>Анализ:</strong> разбор слабых мест после теста</li>
+            </ul>
+        </div>
+        
+        <button class="btn" onclick="startTest()">🚀 Начать тест</button>
+        <p style="font-size: 0.9rem; opacity: 0.7; margin-top: 15px;">
+            💡 Совет: отвечай внимательно, после каждого вопроса будет мгновенная проверка!
+        </p>
+    </div>
+
+    <!-- Test Area -->
+    <div id="test-area" class="hidden">
+        <div class="progress-container">
+            <span class="progress-text" id="progress-label">0/0</span>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+        </div>
+
+        <div id="questions-container"></div>
+
+        <div style="text-align: center; margin-top: 25px;">
+            <button class="btn" id="finish-btn" onclick="finishTest()" disabled>✅ Завершить и увидеть результат</button>
+        </div>
+    </div>
+</div>
+
+<!-- Results Modal -->
+<div id="results-modal" class="modal">
+    <div class="modal-content">
+        <h2 style="color: var(--primary); margin-top: 0;">🎉 Результаты</h2>
+        <div class="score-circle" id="final-score">0%</div>
+        <p id="score-text" style="font-size: 1.1rem; margin-bottom: 20px;"></p>
+        
+        <div class="weakness-list">
+            <h3 style="margin-top: 0; color: var(--dark);">📊 Твой персональный разбор:</h3>
+            <ul id="weaknesses" style="padding-left: 20px; margin: 0;"></ul>
+        </div>
+        
+        <div style="margin-top: 25px;">
+            <button class="btn" onclick="location.reload()">🔄 Пройти заново</button>
+            <button class="btn btn-outline" onclick="document.getElementById('results-modal').style.display='none'; document.getElementById('test-area').classList.add('hidden'); document.getElementById('start-screen').classList.remove('hidden');">🏠 В главное меню</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // === БАЗА ЗАДАНИЙ (ЧТЕНИЕ + ГРАММАТИКА) ===
+    
+    const readingTasks = [
+        // Text A - Tourism reasons
+        {
+            text: "Tourism has become a popular activity. Indeed, nowadays people travel more, and further, than they used to. The main reasons for tourism are: recreation, leisure and business. When travelling for recreation, people want to escape their stressful daily routine and to relax. Beach holidays are an example of such tourism. Business trips involve going to a distant place in order to settle business issues.",
+            questions: [
+                { 
+                    q: "What are the main reasons for tourism?", 
+                    options: ["Recreation, leisure and business", "Education and sports", "Health and shopping"], 
+                    answer: 0,
+                    type: 'mc'
+                }
+            ]
+        },
+        // Text B - Travelling benefits
+        {
+            text: "Whether on a business trip or on a honeymoon, people want to explore the place they are in. They go on excursions, try new activities like diving or mountain climbing and learn about the historical background of the place and its cultural peculiarities. Sometimes they find out amazing facts about people and places and about themselves too! In fact, when people travel, they broaden their horizons.",
+            questions: [
+                {
+                    q: "Why does travelling make people smarter?",
+                    options: ["They broaden their horizons", "They earn more money", "They meet famous people"],
+                    answer: 0,
+                    type: 'mc'
+                }
+            ]
+        },
+        // Text C - Ecotourism
+        {
+            text: "A new branch of tourism is ecotourism. It involves visiting relatively untouched places in remote areas. Ecotourism is often misinterpreted as any form of tourism involving wildlife – but it's completely different from jungle tourism or safari. Eco-tourists are against disturbing the environment; even taking photos is not recommended. 'Take only memories and leave only footprints' is a very popular slogan for them.",
+            questions: [
+                {
+                    q: "What nature-friendly ideas started a new branch in the tourism business?",
+                    options: ["Ecotourism", "Business trips", "Beach holidays"],
+                    answer: 0,
+                    type: 'mc'
+                }
+            ]
+        },
+        // Text D - Educational tourism for adults
+        {
+            text: "By educational tourism, most people mean different versions of Learn and Travel Programmes for students. But it's not only for the young and brave. Lots of training and educational programmes for adults are offered in different corners of the world. Retired people participate in these programmes too. They gladly enroll on overseas courses ranging from gardening and design to computer skills and programming.",
+            questions: [
+                {
+                    q: "What kind of tourism is getting popular with elderly people?",
+                    options: ["Educational tourism", "Extreme tourism", "Medical tourism"],
+                    answer: 0,
+                    type: 'mc'
+                }
+            ]
+        },
+        // Text E - Transport & environment
+        {
+            text: "If possible, consider means of transport other than the plane. Rapidly increasing numbers of flights have put the environment in danger. Planes pollute the air, which results in global warming. In fact, tourism is not harmless fun as many may think: new airports and tourist infrastructure, pollution and crowds of noisy tourists make wild animals migrate, which may decrease their population or even make them extinct.",
+            questions: [
+                {
+                    q: "Why can tourism be dangerous to nature?",
+                    options: ["It causes pollution and animal migration", "It is too expensive", "It requires special equipment"],
+                    answer: 0,
+                    type: 'mc'
+                }
+            ]
+        },
+        // Text F - Budget travel tips
+        {
+            text: "With all its benefits, travelling is still a very expensive activity and may not fit every budget. To reduce the costs, avoid travelling in high season when flight tickets and hotels are overpriced. Remember that, along with expensive destinations, there are less prestigious but even more interesting places. When planning a trip, find out about low-cost airlines, discounts and special offers.",
+            questions: [
+                {
+                    q: "What are the ways to save money while travelling?",
+                    options: ["Avoid high season, use low-cost airlines", "Travel only by plane", "Stay in luxury hotels"],
+                    answer: 0,
+                    type: 'mc'
+                }
+            ]
+        },
+        // Story: The Owl - TFNS questions
+        {
+            text: "Joan Harrison was walking along the street. She was shy and always felt lonely and upset. Joan worked as a secretary in an office in the city centre. It was lunch time and she went out to get some air. She was looking absently at the shop-windows when she saw a brown wooden owl in one of them. Suddenly Joan stopped. Joan was totally indifferent to birds and she had never understood people who collected useless statues. But for some reason she could not take her eyes off the owl. The wooden owl drew Joan to itself.",
+            questions: [
+                { q: "Joan collected small statues of birds.", options: ["True", "False", "Not stated"], answer: 1, type: 'tfns' },
+                { q: "Joan had a well-paid job.", options: ["True", "False", "Not stated"], answer: 1, type: 'tfns' },
+                { q: "The wooden owl improved Joan's mood.", options: ["True", "False", "Not stated"], answer: 0, type: 'tfns' }
+            ]
+        },
+        {
+            text: "Joan decided to buy the owl. She earned a little, just to pay for her room and food. She couldn't afford new clothes. Even a ticket to the cinema was a heavy expense for her. But this time Joan was sure that she had to buy the wooden owl. Joan opened the door of the shop. She asked the shop assistant about the price of the wooden owl. It was fifty pounds. Joan understood that it was sheer madness to buy such an expensive wooden bird. But she did it without any hesitation.",
+            questions: [
+                { q: "Joan joined the pottery class because of her friends' advice.", options: ["True", "False", "Not stated"], answer: 1, type: 'tfns' },
+                { q: "Joan successfully participated in art exhibitions.", options: ["True", "False", "Not stated"], answer: 0, type: 'tfns' }
+            ]
+        },
+        {
+            text: "At the pottery class Joan achieved considerable results. Her teacher said she had a unique style. Nobody knew that she worked hard at home. Under the owl's observation Joan experimented with forms and colours. Once she took part in the students' show at the college, and the Museum of Arts asked her to sell her works for two thousand pounds. The sum covered all her debts and she could afford to buy a new dress and shoes and even more.",
+            questions: [
+                { q: "There was an image of the owl on Joan's every work.", options: ["True", "False", "Not stated"], answer: 0, type: 'tfns' },
+                { q: "After Joan's death the wooden owl disappeared from her house.", options: ["True", "False", "Not stated"], answer: 2, type: 'tfns' }
+            ]
+        },
+        // Additional reading practice texts
+        {
+            text: "Learning a foreign language opens many doors. It helps you understand other cultures, make friends from different countries, and find better job opportunities. Many people start learning English because it is the most widely spoken language in the world. However, consistency is more important than intensity: studying 20 minutes every day is better than 3 hours once a week.",
+            questions: [
+                {
+                    q: "What is more important for learning a language?",
+                    options: ["Consistency", "Intensity", "Natural talent"],
+                    answer: 0,
+                    type: 'mc'
+                }
+            ]
+        },
+        {
+            text: "Social media has changed how teenagers communicate. While it helps them stay connected with friends, excessive use can lead to problems with sleep, concentration, and real-life relationships. Experts recommend setting time limits and taking regular digital detoxes to maintain a healthy balance.",
+            questions: [
+                { q: "What do experts recommend regarding social media?", options: ["Using it all day", "Setting time limits", "Deleting all accounts"], answer: 1, type: 'tfns' }
+            ]
+        }
+    ];
+
+    const grammarTasks = [
+        // From PDF demo + expanded variations
+        { base: "BUY", context: "His parents _______ him his first computer at the age of six.", answer: "bought" },
+        { base: "HE", context: "It took _______ several days to learn how to use it.", answer: "him" },
+        { base: "FAST", context: "His mum said that younger people were much _______ than adults.", answer: "faster" },
+        { base: "CHILD", context: "Most _______ in Michael's class were very competent computer users.", answer: "children" },
+        { base: "INVENT", context: "Michael was surprised that the first personal computer _______ in the 70s.", answer: "was invented" },
+        { base: "NOT SEND", context: "We _______ each other e-mails. And there were no networks.", answer: "didn't send" },
+        { base: "BE", context: "She also said that it _______ fun to communicate face-to-face in those times.", answer: "was" },
+        { base: "BE", context: "But if there _______ no computers, I wouldn't be able to communicate...", answer: "were" },
+        { base: "CREATE", context: "I think people _______ even more amazing devices in the near future.", answer: "will create" },
+        { base: "USE", context: "Learning languages is not only interesting but very _______, too.", answer: "useful" },
+        { base: "IMAGINE", context: "Foreign languages improve memory and develop _______.", answer: "imagination" },
+        { base: "FLUENT", context: "People who speak two or more languages _______ are usually more successful.", answer: "fluently" },
+        { base: "PERSON", context: "They are better in making business and _______ contacts.", answer: "personal" },
+        { base: "CREATE", context: "They are more _______ and better at solving conflicts.", answer: "creative" },
+        { base: "INTEREST", context: "Foreign languages make life more _______ and colourful.", answer: "interesting" },
+        // Extra grammar practice - Past Simple
+        { base: "GO", context: "I _______ to London last summer.", answer: "went" },
+        { base: "SEE", context: "She _______ a beautiful film yesterday.", answer: "saw" },
+        { base: "WRITE", context: "He _______ a letter to his friend last week.", answer: "wrote" },
+        { base: "EAT", context: "We _______ pizza for dinner yesterday.", answer: "ate" },
+        { base: "HAVE", context: "They _______ a great time at the party.", answer: "had" },
+        // Present Perfect
+        { base: "JUST FINISH", context: "I _______ my homework.", answer: "have just finished" },
+        { base: "NEVER BE", context: "She _______ to Paris.", answer: "has never been" },
+        { base: "ALREADY DO", context: "We _______ this exercise.", answer: "have already done" },
+        // Comparatives/Superlatives
+        { base: "GOOD", context: "This is the _______ book I've ever read!", answer: "best" },
+        { base: "BAD", context: "Yesterday was _______ than today.", answer: "worse" },
+        { base: "INTERESTING", context: "This museum is _______ than that one.", answer: "more interesting" },
+        // Word formation extras
+        { base: "SUCCESS", context: "I wish you _______ in your exam!", answer: "success" },
+        { base: "HAPPY", context: "She is the _______ person I know.", answer: "happiest" },
+        { base: "CARE", context: "Be _______ when you cross the road!", answer: "careful" },
+        { base: "FRIEND", context: "The locals were very _______ to us.", answer: "friendly" },
+        { base: "NATION", context: "English is an _______ language in many countries.", answer: "international" },
+        // Passive voice
+        { base: "BUILD", context: "This house _______ in 1995.", answer: "was built" },
+        { base: "WRITE", context: "Harry Potter _______ by J.K. Rowling.", answer: "was written" },
+        // Future forms
+        { base: "VISIT", context: "I think I _______ my grandparents next weekend.", answer: "will visit" },
+        { base: "MEET", context: "We _______ at the cinema at 6 pm tomorrow.", answer: "are meeting" }
+    ];
+
+    // === ЛОГИКА ПРИЛОЖЕНИЯ ===
+
+    let currentQuestions = [];
+    let userAnswers = {};
+    let score = 0;
+    let totalQuestions = 0;
+
+    // Fisher-Yates shuffle
+    function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    function startTest() {
+        document.getElementById('start-screen').classList.add('hidden');
+        document.getElementById('test-area').classList.remove('hidden');
+        
+        currentQuestions = [];
+        userAnswers = {};
+        score = 0;
+        
+        // 1. Reading: pick 8 random questions from different texts
+        const shuffledReading = shuffle([...readingTasks]);
+        let readingCount = 0;
+        for (const textObj of shuffledReading) {
+            if (readingCount >= 8) break;
+            const qs = shuffle([...textObj.questions]);
+            for (const q of qs) {
+                if (readingCount >= 8) break;
+                currentQuestions.push({
+                    type: 'reading',
+                    text: textObj.text,
+                    question: q.q,
+                    options: q.options,
+                    answer: q.answer,
+                    qType: q.type
+                });
+                readingCount++;
+            }
+        }
+
+        // 2. Grammar: pick 12 random
+        const shuffledGrammar = shuffle([...grammarTasks]);
+        for (let i = 0; i < 12 && i < shuffledGrammar.length; i++) {
+            const g = shuffledGrammar[i];
+            currentQuestions.push({
+                type: 'grammar',
+                base: g.base,
+                context: g.context,
+                answer: g.answer.toLowerCase().trim().replace(/\s+/g, '')
+            });
+        }
+
+        totalQuestions = currentQuestions.length;
+        renderQuestions();
+        updateProgress();
+    }
+
+    function renderQuestions() {
+        const container = document.getElementById('questions-container');
+        container.innerHTML = '';
+
+        currentQuestions.forEach((q, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.id = `q-card-${index}`;
+
+            // Section badge
+            const badge = q.type === 'reading' 
+                ? '<span class="section-badge badge-reading">📖 Чтение</span>'
+                : '<span class="section-badge badge-grammar">✍️ Грамматика</span>';
+            
+            let html = `<h3 class="section-title">Задание ${index + 1}</h3>${badge}`;
+
+            if (q.type === 'reading') {
+                // Show truncated text for context
+                const displayText = q.text.length > 250 ? q.text.substring(0, 250) + '...' : q.text;
+                html += `
+                    <div class="reading-text">${displayText}</div>
+                    <p class="question-text">${q.question}</p>
+                    <div class="options-grid">
+                        ${q.options.map((opt, i) => 
+                            `<button class="option-btn" onclick="checkAnswer(${index}, ${i}, this)">${opt}</button>`
+                        ).join('')}
+                    </div>
+                `;
+            } else if (q.type === 'grammar') {
+                html += `
+                    <div class="grammar-task">
+                        <p>Преобразуйте слово <span class="base-word">${q.base}</span>:</p>
+                        <p style="margin: 10px 0;">${q.context.replace('_______', '__________')}</p>
+                        <input type="text" class="word-input" id="input-${index}" placeholder="Ваш ответ" autocomplete="off">
+                        <br>
+                        <button class="btn btn-outline" style="margin-top: 8px;" onclick="checkGrammar(${index})">Проверить</button>
+                    </div>
+                `;
+            }
+
+            html += `<div id="feedback-${index}" class="feedback"></div>`;
+            card.innerHTML = html;
+            container.appendChild(card);
+        });
+    }
+
+    function checkAnswer(qIndex, selectedOption, btnElement) {
+        if (userAnswers[qIndex] !== undefined) return;
+
+        const q = currentQuestions[qIndex];
+        const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+        const parent = btnElement.parentElement;
+        const allBtns = parent.querySelectorAll('.option-btn');
+        
+        // Disable buttons
+        allBtns.forEach(b => {
+            b.disabled = true;
+            b.style.cursor = 'default';
+        });
+
+        userAnswers[qIndex] = (selectedOption === q.answer);
+
+        if (selectedOption === q.answer) {
+            btnElement.classList.add('correct');
+            feedbackEl.textContent = "✅ Правильно! Отлично!";
+            feedbackEl.className = "feedback success show";
+            score++;
+        } else {
+            btnElement.classList.add('wrong');
+            allBtns[q.answer].classList.add('correct');
+            feedbackEl.textContent = `❌ Неверно. Правильный ответ: ${q.options[q.answer]}`;
+            feedbackEl.className = "feedback error show";
+        }
+        updateProgress();
+        checkCompletion();
+    }
+
+    function checkGrammar(qIndex) {
+        if (userAnswers[qIndex] !== undefined) return;
+
+        const input = document.getElementById(`input-${qIndex}`);
+        const val = input.value.trim().toLowerCase().replace(/\s+/g, '');
+        const q = currentQuestions[qIndex];
+        const feedbackEl = document.getElementById(`feedback-${qIndex}`);
+
+        userAnswers[qIndex] = (val === q.answer);
+
+        if (val === q.answer) {
+            input.style.borderColor = 'var(--success)';
+            input.style.background = '#e8f8f5';
+            feedbackEl.textContent = "✅ Верно! Молодец!";
+            feedbackEl.className = "feedback success show";
+            score++;
+        } else {
+            input.style.borderColor = 'var(--danger)';
+            input.style.background = '#ffebee';
+            feedbackEl.textContent = `❌ Ошибка. Правильно: ${q.answer.replace(/'/g, "'")}`;
+            feedbackEl.className = "feedback error show";
+        }
+        input.disabled = true;
+        // Disable check button
+        const btn = input.nextElementSibling.nextElementSibling;
+        if (btn && btn.tagName === 'BUTTON') btn.disabled = true;
+        
+        updateProgress();
+        checkCompletion();
+    }
+
+    function updateProgress() {
+        const answered = Object.keys(userAnswers).length;
+        const percent = (answered / totalQuestions) * 100;
+        document.getElementById('progress-fill').style.width = `${percent}%`;
+        document.getElementById('progress-label').textContent = `${answered}/${totalQuestions}`;
+    }
+
+    function checkCompletion() {
+        if (Object.keys(userAnswers).length === totalQuestions) {
+            document.getElementById('finish-btn').disabled = false;
+        }
+    }
+
+    function finishTest() {
+        const modal = document.getElementById('results-modal');
+        const scoreCircle = document.getElementById('final-score');
+        const scoreText = document.getElementById('score-text');
+        const weaknessesList = document.getElementById('weaknesses');
+
+        const percentage = Math.round((score / totalQuestions) * 100);
+        scoreCircle.textContent = `${percentage}%`;
+        
+        // Message based on score
+        let message, emoji;
+        if (percentage >= 90) { message = "Феноменально! Ты готов к ОГЭ на отлично!"; emoji = "🏆"; }
+        else if (percentage >= 75) { message = "Отличный результат! Ещё немного практики — и будет идеально!"; emoji = "🌟"; }
+        else if (percentage >= 50) { message = "Хорошо! Повтори слабые темы, и результат вырастет!"; emoji = "👍"; }
+        else { message = "Не переживай! Практика — ключ к успеху. Давай ещё раз!"; emoji = "💪"; }
+        
+        scoreText.innerHTML = `<strong>${emoji} ${score} из ${totalQuestions}</strong><br>${message}`;
+
+        // Analysis
+        let readingWrong = 0, readingTotal = 0;
+        let grammarWrong = 0, grammarTotal = 0;
+
+        currentQuestions.forEach((q, i) => {
+            if (q.type === 'reading') {
+                readingTotal++;
+                if (!userAnswers[i]) readingWrong++;
+            } else {
+                grammarTotal++;
+                if (!userAnswers[i]) grammarWrong++;
+            }
+        });
+
+        weaknessesList.innerHTML = '';
+        const addWeakness = (icon, title, wrong, total, tip) => {
+            if (wrong > 0) {
+                weaknessesList.innerHTML += `<li><strong>${icon} ${title}:</strong> ${wrong}/${total} ошибок. 💡 ${tip}</li>`;
+            }
+        };
+        
+        addWeakness('📖', 'Чтение', readingWrong, readingTotal, 'Внимательно ищи в тексте синонимы, а не точные слова из вопроса.');
+        addWeakness('✍️', 'Грамматика', grammarWrong, grammarTotal, 'Повтори: Past Simple, Present Perfect, степени сравнения, словообразование.');
+        
+        if (percentage === 100) {
+            weaknessesList.innerHTML = '<li>🎉 Идеально! У тебя нет слабых мест в этом тесте!</li>';
+            createConfetti();
+        } else if (readingWrong === 0 && grammarWrong === 0) {
+            weaknessesList.innerHTML = '<li>✨ Все ответы верны! Так держать!</li>';
+        }
+
+        modal.style.display = 'flex';
+    }
+
+    // Confetti effect for perfect score
+    function createConfetti() {
+        const colors = ['#6C5CE7', '#00CEC9', '#FDCB6E', '#FF7675', '#00B894'];
+        for (let i = 0; i < 50; i++) {
+            setTimeout(() => {
+                const conf = document.createElement('div');
+                conf.className = 'confetti';
+                conf.style.left = Math.random() * 100 + 'vw';
+                conf.style.background = colors[Math.floor(Math.random() * colors.length)];
+                conf.style.animationDuration = (2 + Math.random() * 2) + 's';
+                document.body.appendChild(conf);
+                setTimeout(() => conf.remove(), 4000);
+            }, i * 50);
+        }
+    }
+
+    // Close modal on outside click
+    document.getElementById('results-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'results-modal') {
+            e.target.style.display = 'none';
+        }
+    });
+</script>
+
+</body>
+</html>
