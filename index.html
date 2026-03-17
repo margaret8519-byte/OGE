@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OGE English 2026 🔥</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a0a2e;
+  --bg:#fffbe8;
+  --c1:#ff3d6e; --c2:#ff8800; --c3:#ffe600; --c4:#00cc88; --c5:#00b4f5; --c6:#b24fff;
+  --card:#fff;
+  --shadow:4px 5px 0px var(--ink);
+  --shadow-lg:6px 7px 0px var(--ink);
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+body{
+  font-family:'Nunito',sans-serif;
+  font-size:17px;
+  background:var(--bg);
+  color:var(--ink);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ══ BACKGROUND PATTERN ══ */
+body::before{
+  content:'';
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:
+    radial-gradient(circle, rgba(255,61,110,.07) 1px, transparent 1px),
+    radial-gradient(circle, rgba(0,180,245,.07) 1px, transparent 1px);
+  background-size:40px 40px, 60px 60px;
+  background-position:0 0, 20px 20px;
+}
+
+/* ══ HEADER ══ */
+header{
+  position:sticky;top:0;z-index:300;
+  background:var(--ink);
+  padding:.9rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:4px solid var(--c3);
+  overflow:hidden;
+}
+.hdr-stripe{
+  position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:repeating-linear-gradient(90deg,var(--c1) 0,var(--c1) 16%,var(--c2) 16%,var(--c2) 33%,var(--c3) 33%,var(--c3) 50%,var(--c4) 50%,var(--c4) 66%,var(--c5) 66%,var(--c5) 83%,var(--c6) 83%,var(--c6) 100%);
+}
+.logo{display:flex;align-items:center;gap:14px;}
+.logo-icon{
+  font-size:2.2rem;display:flex;align-items:center;justify-content:center;
+  width:52px;height:52px;border-radius:50%;
+  background:var(--c3);border:3px solid var(--card);
+  box-shadow:3px 3px 0 var(--c2);
+  animation:spin 8s linear infinite;flex-shrink:0;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.logo-text{
+  font-family:'Fredoka One',cursive;
+  font-size:1.55rem;letter-spacing:.04em;
+  background:linear-gradient(90deg,var(--c3),#ff9e2c,var(--c1));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  filter:drop-shadow(2px 2px 0 rgba(255,230,0,.4));
+}
+.logo-sub{font-size:.78rem;color:rgba(255,255,255,.6);font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.live-pill{
+  display:flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.25);
+  border-radius:50px;padding:6px 16px;
+  font-size:.82rem;font-weight:800;color:#fff;letter-spacing:.07em;
+}
+.dot{width:9px;height:9px;background:var(--c4);border-radius:50%;box-shadow:0 0 8px var(--c4);animation:blink 1.6s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+/* ══ LAYOUT ══ */
+.wrap{max-width:940px;margin:0 auto;padding:2rem 1.5rem;position:relative;z-index:1;}
+
+/* ══ STICKER CARD ══ */
+.card{
+  background:var(--card);
+  border:3px solid var(--ink);
+  border-radius:var(--r);
+  padding:2rem 2.2rem;
+  margin-bottom:1.8rem;
+  position:relative;
+  box-shadow:var(--shadow-lg);
+  animation:popIn .35s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes popIn{from{opacity:0;transform:scale(.93) translateY(18px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+.card.clr-red   { background:linear-gradient(135deg,#fff8f9,#fff0f2); }
+.card.clr-blue  { background:linear-gradient(135deg,#f0fbff,#e5f6fd); }
+.card.clr-green { background:linear-gradient(135deg,#f0fff8,#e5fff3); }
+.card.clr-yellow{ background:linear-gradient(135deg,#fffef0,#fff9d6); }
+.card.clr-purple{ background:linear-gradient(135deg,#faf0ff,#f5e5ff); }
+
+/* top coloured bar */
+.card::before{content:'';position:absolute;top:-3px;left:16px;right:16px;height:5px;border-radius:3px 3px 0 0;}
+.card.clr-red   ::before{background:linear-gradient(90deg,var(--c1),var(--c2));}
+.card.clr-blue  ::before{background:linear-gradient(90deg,var(--c5),var(--c4));}
+.card.clr-green ::before{background:linear-gradient(90deg,var(--c4),var(--c3));}
+.card.clr-yellow::before{background:linear-gradient(90deg,var(--c3),var(--c2));}
+.card.clr-purple::before{background:linear-gradient(90deg,var(--c6),var(--c5));}
+
+/* ══ START SCREEN ══ */
+.hero{text-align:center;padding:2.5rem 1rem 3rem;}
+.hero-sticker{font-size:5rem;display:block;margin:0 auto .5rem;animation:bounce 2s ease-in-out infinite;}
+@keyframes bounce{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-14px) rotate(5deg)}}
+.hero-title{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(2.8rem,8vw,5rem);
+  line-height:1;
+  color:var(--ink);
+  text-shadow:5px 5px 0 var(--c3),7px 7px 0 var(--c2);
+  margin-bottom:.3rem;
+  letter-spacing:.03em;
+}
+.hero-year{
+  font-family:'Fredoka One',cursive;
+  font-size:clamp(1.4rem,4vw,2rem);
+  color:var(--c1);
+  text-shadow:3px 3px 0 rgba(255,61,110,.25);
+  margin-bottom:2rem;
+  letter-spacing:.05em;
+}
+
+.splat{
+  display:inline-block;padding:6px 20px;border-radius:50px;
+  font-family:'Fredoka One',cursive;font-size:1rem;letter-spacing:.07em;
+  border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);
+  margin-bottom:2rem;text-transform:uppercase;
+}
+.splat.s1{background:var(--c3);color:var(--ink);}
+
+.stats{display:flex;justify-content:center;gap:1rem;margin:1.5rem auto 2rem;flex-wrap:wrap;max-width:480px;}
+.st{
+  flex:1;min-width:100px;text-align:center;
+  border:3px solid var(--ink);border-radius:12px;padding:1rem .8rem;
+  box-shadow:4px 4px 0 var(--ink);
+  transition:transform .15s;
+}
+.st:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);}
+.st.s-y{background:var(--c3);}
+.st.s-p{background:#ff9ef8;}
+.st.s-b{background:#8ee8ff;}
+.st-n{font-family:'Fredoka One',cursive;font-size:2.4rem;display:block;line-height:1;color:var(--ink);}
+.st-l{font-size:.78rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);}
+
+.feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.9rem;margin:1.5rem 0 2.5rem;}
+.feat{
+  border:3px solid var(--ink);border-radius:12px;padding:1rem;
+  box-shadow:3px 3px 0 var(--ink);transition:transform .15s,box-shadow .15s;
+  background:var(--card);text-align:left;
+}
+.feat:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
+.feat:nth-child(1){background:#fff8c0;}
+.feat:nth-child(2){background:#c8f0ff;}
+.feat:nth-child(3){background:#ffe0f5;}
+.feat:nth-child(4){background:#ccffe6;}
+.fi{font-size:2rem;display:block;margin-bottom:.4rem;}
+.ft{font-family:'Fredoka One',cursive;font-size:1rem;letter-spacing:.03em;color:var(--ink);}
+.fd{font-size:.85rem;font-weight:700;color:#555;margin-top:3px;line-height:1.3;}
+
+/* ══ BUTTONS ══ */
+.btn{
+  font-family:'Fredoka One',cursive;font-size:1.05rem;letter-spacing:.05em;
+  border:3px solid var(--ink);cursor:pointer;padding:14px 32px;border-radius:50px;
+  transition:transform .14s,box-shadow .14s;display:inline-block;margin:5px 4px;
+  text-decoration:none;box-shadow:4px 4px 0 var(--ink);
+}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink);}
+.btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink);}
+.btn:disabled{opacity:.35;cursor:not-allowed;transform:none!important;box-shadow:4px 4px 0 var(--ink)!important;}
+
+.btn-go  {background:var(--c3);color:var(--ink);}
+.btn-fin {background:var(--c4);color:#fff;}
+.btn-redo{background:var(--c1);color:#fff;}
+.btn-home{background:var(--card);color:var(--ink);}
+
+.btn-chk{
+  font-family:'Fredoka One',cursive;font-size:.95rem;letter-spacing:.04em;
+  border:3px solid var(--ink);cursor:pointer;padding:10px 24px;border-radius:50px;
+  background:var(--c5);color:#fff;
+  box-shadow:3px 3px 0 var(--ink);margin-top:12px;
+  transition:transform .14s,box-shadow .14s;
+}
+.btn-chk:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);}
+.btn-chk:disabled{opacity:.35;cursor:not-allowed;transform:none!important;}
+
+/* ══ PROGRESS ══ */
+.prog-bar{
+  display:flex;align-items:center;gap:14px;
+  background:var(--card);border:3px solid var(--ink);
+  border-radius:50px;padding:10px 20px;margin-bottom:1.8rem;
+  box-shadow:3px 3px 0 var(--ink);
+}
+.prog-lbl{font-family:'Fredoka One',cursive;font-size:1rem;color:var(--ink);white-space:nowrap;}
+.prog-track{flex:1;height:12px;background:#f0e8d0;border-radius:6px;border:2px solid var(--ink);overflow:hidden;}
+.prog-fill{
+  height:100%;
+  background:repeating-linear-gradient(90deg,var(--c1) 0,var(--c2) 25%,var(--c3) 50%,var(--c4) 75%,var(--c5) 100%);
+  background-size:200% 100%;
+  animation:slide 3s linear infinite;
+  border-radius:4px;transition:width .5s cubic-bezier(.4,0,.2,1);width:0%;
+}
+@keyframes slide{to{background-position:200% 0}}
+.prog-cnt{font-family:'Fredoka One',cursive;font-size:1rem;white-space:nowrap;min-width:50px;text-align:right;}
+
+/* ══ BADGES ══ */
+.badge{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:5px 14px;border-radius:50px;
+  font-family:'Fredoka One',cursive;font-size:.95rem;
+  border:3px solid var(--ink);box-shadow:2px 2px 0 var(--ink);
+  margin-bottom:1rem;letter-spacing:.03em;
+}
+.b-read{background:#c8f0ff;color:var(--ink);}
+.b-gram{background:#fff090;color:var(--ink);}
+
+.q-num{
+  font-family:'Fredoka One',cursive;font-size:.85rem;
+  letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:.6rem;
+}
+.q-num em{color:var(--c1);font-style:normal;}
+
+/* ══ READING ══ */
+.rd-wrap{
+  background:linear-gradient(135deg,#f8f4ff,#eef8ff);
+  border:2.5px solid var(--ink);border-radius:12px;
+  padding:1.2rem 1.4rem;margin:10px 0 18px;
+  position:relative;
+}
+.rd-wrap::before{
+  content:'📖 ТЕКСТ';
+  position:absolute;top:-14px;left:16px;
+  font-family:'Fredoka One',cursive;font-size:.75rem;letter-spacing:.12em;
+  background:var(--c5);color:#fff;
+  padding:2px 12px;border-radius:50px;
+  border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);
+}
+.rd-text{font-size:1rem;line-height:1.85;color:#2a1540;}
+
+.expand-btn{
+  display:inline-block;margin-top:10px;
+  font-family:'Fredoka One',cursive;font-size:.85rem;
+  background:var(--c3);color:var(--ink);
+  border:2px solid var(--ink);border-radius:50px;
+  padding:5px 16px;box-shadow:2px 2px 0 var(--ink);cursor:pointer;
+  transition:transform .14s;
+}
+.expand-btn:hover{transform:translate(-1px,-1px);}
+
+.q-text{font-size:1.1rem;font-weight:900;color:var(--ink);margin:16px 0 14px;line-height:1.45;}
+
+/* ══ OPTIONS ══ */
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;}
+.opt{
+  background:var(--card);border:3px solid var(--ink);padding:14px 14px;
+  border-radius:12px;cursor:pointer;text-align:center;
+  font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;color:var(--ink);
+  box-shadow:3px 3px 0 var(--ink);transition:transform .14s,box-shadow .14s;
+}
+.opt:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);background:#fffbe0;}
+.opt.correct{
+  background:var(--c4);color:#fff;border-color:var(--ink);
+  box-shadow:3px 3px 0 var(--ink);
+  animation:correctPop .4s cubic-bezier(.34,1.56,.64,1);
+}
+.opt.wrong{background:var(--c1);color:#fff;border-color:var(--ink);}
+@keyframes correctPop{0%{transform:scale(1)}50%{transform:scale(1.06)}100%{transform:scale(1)}}
+
+/* ══ GRAMMAR ══ */
+.gram-wrap{
+  background:linear-gradient(135deg,#fffef0,#fff8d0);
+  border:2.5px solid var(--ink);border-radius:12px;padding:1.4rem;
+  position:relative;
+}
+.gram-wrap::before{
+  content:'✏️ ЗАДАНИЕ';
+  position:absolute;top:-14px;left:16px;
+  font-family:'Fredoka One',cursive;font-size:.75rem;letter-spacing:.12em;
+  background:var(--c3);color:var(--ink);
+  padding:2px 12px;border-radius:50px;
+  border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);
+}
+.gram-lbl{font-size:1rem;font-weight:800;color:#666;margin-bottom:8px;}
+.bword{
+  display:inline-block;
+  background:var(--c1);color:#fff;
+  padding:3px 14px;border-radius:8px;
+  font-family:'Fredoka One',cursive;font-size:1.05rem;letter-spacing:.06em;
+  border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);margin:0 4px;
+}
+.gram-ctx{font-size:1.05rem;line-height:1.8;color:#2a1540;margin:12px 0 13px;font-weight:700;}
+.blank{color:var(--c5);font-weight:900;letter-spacing:.1em;}
+.word-in{
+  background:#fff;border:3px solid var(--ink);color:var(--ink);
+  padding:11px 18px;border-radius:12px;
+  font-family:'Nunito',sans-serif;font-size:1rem;font-weight:800;
+  width:100%;max-width:320px;transition:box-shadow .15s;
+  box-shadow:3px 3px 0 var(--ink);
+}
+.word-in:focus{outline:none;box-shadow:4px 4px 0 var(--c5);}
+.word-in::placeholder{color:#bbb;font-weight:600;}
+.word-in.correct{background:#e8fff4;border-color:var(--c4);color:#007a45;box-shadow:3px 3px 0 var(--c4);}
+.word-in.wrong{background:#fff0f0;border-color:var(--c1);color:#c00;box-shadow:3px 3px 0 var(--c1);}
+.enter-hint{font-size:.82rem;font-weight:700;color:#999;margin-top:6px;}
+.kbd{display:inline-block;background:#f0e8d0;border:2px solid var(--ink);border-radius:5px;padding:1px 8px;font-size:.74rem;}
+
+/* ══ FEEDBACK ══ */
+.fb{margin-top:12px;padding:11px 16px;border-radius:12px;font-size:1rem;font-weight:800;display:none;animation:fbPop .3s ease;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);}
+.fb.show{display:block;}
+.fb.ok {background:#b8ffd8;color:#00602e;}
+.fb.err{background:#ffd0d8;color:#8a0022;}
+@keyframes fbPop{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
+
+/* ══ FINISH AREA ══ */
+.finish-area{
+  text-align:center;margin-top:2rem;padding:2rem;
+  background:var(--card);border:3px dashed var(--ink);border-radius:var(--r);
+}
+.finish-area p{font-size:1rem;font-weight:800;color:#888;margin-bottom:1.2rem;}
+
+/* ══ MODAL ══ */
+.modal{display:none;position:fixed;inset:0;background:rgba(26,10,46,.82);backdrop-filter:blur(8px);z-index:500;justify-content:center;align-items:center;padding:1rem;}
+.modal-box{
+  background:var(--card);border:4px solid var(--ink);
+  border-radius:20px;padding:2.5rem 2rem;
+  max-width:580px;width:100%;text-align:center;
+  box-shadow:8px 8px 0 var(--ink);
+  animation:popIn .4s cubic-bezier(.34,1.56,.64,1);
+  position:relative;overflow:hidden;
+}
+.modal-top-bar{
+  position:absolute;top:0;left:0;right:0;height:7px;
+  background:repeating-linear-gradient(90deg,var(--c1) 0,var(--c1) 16%,var(--c2) 16%,var(--c2) 33%,var(--c3) 33%,var(--c3) 50%,var(--c4) 50%,var(--c4) 66%,var(--c5) 66%,var(--c5) 83%,var(--c6) 83%,var(--c6) 100%);
+}
+.modal-eyebrow{
+  font-family:'Fredoka One',cursive;font-size:.9rem;
+  letter-spacing:.2em;color:#aaa;text-transform:uppercase;margin-bottom:1.2rem;margin-top:.5rem;
+}
+.ring-wrap{width:170px;height:170px;margin:0 auto 1.5rem;position:relative;display:flex;align-items:center;justify-content:center;}
+.ring-wrap svg{position:absolute;inset:0;transform:rotate(-90deg);}
+.r-track{fill:none;stroke:#f0e0d0;stroke-width:12;}
+.r-fill{fill:none;stroke:url(#rg3);stroke-width:12;stroke-linecap:round;stroke-dasharray:471;stroke-dashoffset:471;transition:stroke-dashoffset 1.2s cubic-bezier(.4,0,.2,1);}
+.score-inner{text-align:center;}
+.score-pct{font-family:'Fredoka One',cursive;font-size:3rem;line-height:1;color:var(--ink);text-shadow:3px 3px 0 var(--c3);}
+.score-frc{font-size:.9rem;font-weight:800;color:#999;}
+.res-msg{font-family:'Fredoka One',cursive;font-size:1.25rem;line-height:1.4;margin-bottom:1.5rem;color:var(--ink);}
+
+.analysis{background:#fffbe8;border:3px solid var(--ink);border-radius:14px;padding:1.3rem 1.5rem;text-align:left;margin:1rem 0;box-shadow:3px 3px 0 var(--ink);}
+.a-head{font-family:'Fredoka One',cursive;font-size:1rem;letter-spacing:.08em;color:var(--ink);text-transform:uppercase;margin-bottom:.7rem;}
+.analysis ul{list-style:none;padding:0;}
+.analysis li{padding:7px 0;border-bottom:2px dashed #ddd;font-size:.97rem;font-weight:700;color:#3a2060;line-height:1.5;}
+.analysis li:last-child{border-bottom:none;}
+.analysis li strong{color:var(--ink);}
+
+/* ══ CONFETTI ══ */
+.conf{position:fixed;pointer-events:none;z-index:9999;animation:cfFall linear forwards;border-radius:3px;}
+@keyframes cfFall{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(105vh) rotate(720deg);opacity:0}}
+
+.hidden{display:none!important;}
+::-webkit-scrollbar{width:8px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--ink);border-radius:4px;}
+
+@media(max-width:620px){
+  body{font-size:16px;}
+  header{padding:.7rem 1rem;}
+  .logo-text{font-size:1.2rem;}
+  .wrap{padding:1rem;}
+  .card{padding:1.3rem 1.2rem;}
+  .opts{grid-template-columns:1fr;}
+  .modal-box{padding:1.8rem 1.2rem;}
+  .hero-title{font-size:2.4rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hdr-stripe"></div>
+  <div class="logo">
+    <div class="logo-icon">📚</div>
+    <div>
+      <div class="logo-text">OGE TRAINER</div>
+      <div class="logo-sub">English 2026 · ФИПИ</div>
+    </div>
+  </div>
+  <div class="live-pill"><div class="dot"></div>ОНЛАЙН</div>
+</header>
+
+<div class="wrap" id="app">
+
+  <!-- ══ START ══ -->
+  <div id="start-screen" class="card clr-yellow">
+    <div class="hero">
+      <span class="hero-sticker">🚀</span>
+      <h1 class="hero-title">English Trainer</h1>
+      <div class="hero-year">ОГЭ 2026 — ФИПИ</div>
+
+      <div class="splat s1">Задания из официальной базы ФИПИ!</div>
+
+      <div class="stats">
+        <div class="st s-y"><span class="st-n">15</span><span class="st-l">📖 Чтение</span></div>
+        <div class="st s-p"><span class="st-n">15</span><span class="st-l">✏️ Грамматика</span></div>
+        <div class="st s-b"><span class="st-n">∞</span><span class="st-l">🎲 Попыток</span></div>
+      </div>
+
+      <div class="feats">
+        <div class="feat"><span class="fi">📖</span><div class="ft">Чтение TFNS</div><div class="fd">Тексты из базы ФИПИ 2026 — True / False / Not Stated</div></div>
+        <div class="feat"><span class="fi">✏️</span><div class="ft">Грамматика</div><div class="fd">Словообразование и все времена из реальных вариантов</div></div>
+        <div class="feat"><span class="fi">🎲</span><div class="ft">Рандом!</div><div class="fd">Каждый тест — уникальный набор. Не повторяется!</div></div>
+        <div class="feat"><span class="fi">📊</span><div class="ft">Аналитика</div><div class="fd">Разбор ошибок и советы после каждого теста</div></div>
+      </div>
+
+      <button class="btn btn-go" onclick="startTest()" style="font-size:1.25rem;padding:16px 48px;">🚀 Поехали!</button>
+      <br>
+      <span style="font-size:.9rem;font-weight:700;color:#888;display:inline-block;margin-top:.8rem;">⚡ Мгновенная проверка после каждого ответа</span>
+    </div>
+  </div>
+
+  <!-- ══ TEST AREA ══ -->
+  <div id="test-area" class="hidden">
+    <div class="prog-bar">
+      <span class="prog-lbl">📈 Прогресс</span>
+      <div class="prog-track"><div class="prog-fill" id="prog-fill"></div></div>
+      <span class="prog-cnt" id="prog-cnt">0/0</span>
+    </div>
+    <div id="qcont"></div>
+    <div class="finish-area">
+      <p>Ответь на все вопросы 👇</p>
+      <button class="btn btn-fin" id="finish-btn" onclick="finishTest()" disabled style="font-size:1.1rem;padding:15px 38px;">🏁 Завершить и узнать результат!</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MODAL ══ -->
+<div id="modal" class="modal">
+  <div class="modal-box">
+    <div class="modal-top-bar"></div>
+    <div class="modal-eyebrow">🎉 Результаты теста</div>
+    <div class="ring-wrap">
+      <svg viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="rg3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ff3d6e"/>
+            <stop offset="50%" stop-color="#ffe600"/>
+            <stop offset="100%" stop-color="#00cc88"/>
+          </linearGradient>
+        </defs>
+        <circle class="r-track" cx="85" cy="85" r="75"/>
+        <circle class="r-fill" id="r-fill" cx="85" cy="85" r="75"/>
+      </svg>
+      <div class="score-inner">
+        <div class="score-pct" id="s-pct">0%</div>
+        <div class="score-frc" id="s-frc"></div>
+      </div>
+    </div>
+    <p class="res-msg" id="s-msg"></p>
+    <div class="analysis">
+      <div class="a-head">📋 Персональный разбор</div>
+      <ul id="s-list"></ul>
+    </div>
+    <div style="margin-top:1.5rem;">
+      <button class="btn btn-redo" onclick="location.reload()">🔄 Ещё раз!</button>
+      <button class="btn btn-home" onclick="goHome()">🏠 Меню</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ════════════════════════════════════════════
+   READING TASKS — полностью из ФИПИ 2026
+   answer: 0=True, 1=False, 2=Not Stated
+════════════════════════════════════════════ */
+const readingTasks = [
+
+{id:"owl", title:"The Owl",
+ text:`Joan Harrison was walking along the street. She was shy and always felt lonely and upset. Joan worked as a secretary in an office in the city centre. It was lunchtime and she went out to get some air. She was looking absently at the shop-windows when she saw a brown wooden owl in one of them. Suddenly Joan stopped. Joan was totally indifferent to birds and she had never understood people who collected useless statues. But for some reason she could not take her eyes off the owl. The wooden owl drew Joan to itself.
+
+Joan decided to buy the owl. She earned a little, just to pay for her room and food. She couldn't afford new clothes. Even a ticket to the cinema was a heavy expense for her. But this time Joan was sure that she had to buy the wooden owl. She asked the shop assistant about the price — it was fifty pounds. Joan understood that it was sheer madness to buy such an expensive wooden bird. But she did it without any hesitation.
+
+The next morning she left her house in a very good mood. At the pottery class Joan achieved considerable results. Her teacher said she had a unique style. Under the owl's observation Joan experimented with forms and colours. Once she took part in the students' show at the college, and the Museum of Arts asked her to sell her works for two thousand pounds. The sum covered all her debts. Joan left her office and became a potter. A year later she and the art director of the museum were happily married. Each piece of her pottery had a picture of the owl on it. Joan never gave her owl to anybody until her dying day.`,
+ questions:[
+  {q:"Joan collected small statues of birds.", o:["True","False","Not stated"], a:1},
+  {q:"Joan had a well-paid job.", o:["True","False","Not stated"], a:1},
+  {q:"The wooden owl improved Joan's mood.", o:["True","False","Not stated"], a:0},
+  {q:"Joan joined the pottery class because of her friends' advice.", o:["True","False","Not stated"], a:2},
+  {q:"Joan successfully participated in art exhibitions.", o:["True","False","Not stated"], a:0},
+  {q:"There was an image of the owl on Joan's every work.", o:["True","False","Not stated"], a:0},
+  {q:"After Joan's death the wooden owl disappeared from her house.", o:["True","False","Not stated"], a:2}
+ ]},
+
+{id:"cambridge", title:"Cambridge University",
+ text:`Cambridge University is the second-oldest university in the English-speaking world (after Oxford) and the seventh-oldest in the world. The history of Cambridge began in 1209 when several hundred students arrived after walking 60 miles from Oxford. Life at Oxford was hard — there was constant fighting between citizens and students. One day a student accidentally killed a townsman. The Mayor arrested three innocent students and they were put to death. In protest, many students left for Cambridge.
+
+Nowadays there are more than 30 different colleges, including five for women and several mixed colleges. The training course lasts 4 years. Students study natural and technical sciences, law, history, languages, geography, medicine, economics and music. After 3 years a student may proceed to a Bachelor's degree.
+
+There are many ancient traditions still observed at Cambridge. Students are required to wear gowns at lectures, in the university library, in the street in the evening, and for official visits. All students must pay for their education. Very few students get grants. Many great men studied at Cambridge: Bacon, Milton, Byron, Cromwell, Newton, Darwin and Kapitsa.`,
+ questions:[
+  {q:"Cambridge University was founded earlier than the University of Oxford.", o:["True","False","Not Stated"], a:1},
+  {q:"The citizens of Cambridge were happy to get the university in their town.", o:["True","False","Not Stated"], a:2},
+  {q:"Nowadays there are several female colleges in Cambridge University.", o:["True","False","Not Stated"], a:0},
+  {q:"At present, the students of Cambridge University have to study Latin.", o:["True","False","Not Stated"], a:1},
+  {q:"The students of Cambridge University have their own dress code.", o:["True","False","Not Stated"], a:0},
+  {q:"The education at Cambridge University is free.", o:["True","False","Not Stated"], a:1},
+  {q:"There are famous scientists among the graduates of Cambridge University.", o:["True","False","Not Stated"], a:0}
+ ]},
+
+{id:"eton", title:"Eton College",
+ text:`Within a ten-minute walk of Windsor Castle there is the legendary Eton College — one of England's largest independent schools and one of the most prestigious. Members of the British royal family are traditionally educated here. Eton is a full boarding school. It is also one of the few remaining boys' schools — there is no opportunity for a girl to study there. Boys enter Eton at about 13.
+
+The school was founded by Henry VI in the fifteenth century to provide free education for poor pupils who would then go on to study at King's College in Cambridge. That connection no longer exists.
+
+All students wear a uniform of a black tailcoat, a waistcoat, a white collar and dark trousers — worn at all times for all classes. At Eton there are dozens of organisations known as 'societies'. Among past guest speakers were composer Andrew Lloyd Webber, designer Vivienne Westwood, and actor Ralph Fiennes. Members of the Pop — the most influential society — are allowed to wear any waistcoat they please. The official colour of the college is the so-called 'Eton blue' — a light blue-green colour used since the early 19th century.`,
+ questions:[
+  {q:"Eton is the oldest boarding school in Great Britain.", o:["True","False","Not Stated"], a:2},
+  {q:"In our time, girls are allowed to enter Eton College.", o:["True","False","Not Stated"], a:1},
+  {q:"Eton College was established to educate children from the wealthiest British families.", o:["True","False","Not Stated"], a:1},
+  {q:"The Eton uniform is sold only in one shop on the territory of the college.", o:["True","False","Not Stated"], a:2},
+  {q:"Many famous people have taken part in the work of the student societies.", o:["True","False","Not Stated"], a:0},
+  {q:"It is easy to identify Poppers in a crowd of students due to their clothes.", o:["True","False","Not Stated"], a:0},
+  {q:"The official colour of Eton College is white.", o:["True","False","Not Stated"], a:1}
+ ]},
+
+{id:"potatoes", title:"Potatoes",
+ text:`The potato comes from the high and cool areas of the Andes of Peru. It began to be grown as food more than 7,000 years ago. In 1589, Sir Walter Raleigh first brought the potato to Ireland. Despite the fact that potatoes grew well in the poor soil of Ireland, it took nearly 200 years for them to become widely grown. People didn't like their unusual appearance and bitter taste.
+
+According to legend, Sir Walter Raleigh presented potato plants to Queen Elizabeth I. A special royal potato dinner was made, but the royal cooks didn't know how to cook potatoes: they threw away the tubers and brought to the table a dish of boiled leaves (which are very poisonous). Most of the guests died after that royal dinner.
+
+The only country which did not accept potatoes was France. To overcome the negative attitude, King Louis XVI started to wear a potato flower as decoration. He even ordered citizens to grow potatoes, but farmers still refused. Then King Louis XVI ordered potatoes planted in a royal field and put guards around it. When the guards were allowed to go off duty, the farmers dug out some potatoes and planted them in their own fields. The king's plan was a success.`,
+ questions:[
+  {q:"Potatoes were the basic food for the people of Peru.", o:["True","False","Not Stated"], a:2},
+  {q:"The British people liked potatoes at once.", o:["True","False","Not Stated"], a:1},
+  {q:"The potato dish for the royal dinner was prepared in a wrong way.", o:["True","False","Not Stated"], a:0},
+  {q:"King Louis XVI was against the idea of growing potatoes for food.", o:["True","False","Not Stated"], a:1},
+  {q:"French farmers stole some potatoes from the King's field.", o:["True","False","Not Stated"], a:0},
+  {q:"The potato helped the development of the European countries.", o:["True","False","Not Stated"], a:0},
+  {q:"Nowadays the potato is the most popular vegetable in Europe.", o:["True","False","Not Stated"], a:2}
+ ]},
+
+{id:"crownjewels", title:"The Crown Jewels",
+ text:`Every year, millions of visitors come to the Tower of London to see the Crown Jewels. The Crown Jewels have been kept in the Tower since 1303. Although there have been a few attempts to steal them, none have succeeded. The most famous thief was Thomas Blood.
+
+On 9th May, 1660, Thomas Blood, dressed as a priest, came to the Tower with three well-dressed young men. He gained the confidence of Talbot Edwards, the Master of the Jewel House, and asked him to show the Crown Jewels to his friends. Suddenly Blood took out a hammer and struck the Master on the head. Blood made the king's crown flat with the hammer to put it into his pocket. However, Talbert Edwards' son arrived at the Tower earlier than expected, found his father unconscious and raised the alarm. Thomas Blood and his gang were caught when they were getting out of the Tower.
+
+The end of the story is unbelievable: Thomas Blood was not punished. Moreover, he was awarded a pension of £500 a year. The Master of the Jewel House Talbot Edwards was dismissed and later died in misery. Since Thomas Blood's attempt, there have been no further attempts to steal the jewels.`,
+ questions:[
+  {q:"Nowadays British kings and queens use the Crown Jewels for ceremonial events.", o:["True","False","Not Stated"], a:2},
+  {q:"Thomas Blood's crime was well-planned.", o:["True","False","Not Stated"], a:0},
+  {q:"Thomas Blood damaged the crown to take it out.", o:["True","False","Not Stated"], a:0},
+  {q:"The criminals were found the next day after the robbery.", o:["True","False","Not Stated"], a:1},
+  {q:"King Charles II punished Thomas Blood severely.", o:["True","False","Not Stated"], a:1},
+  {q:"Thomas Blood promised King Charles II to stop stealing forever.", o:["True","False","Not Stated"], a:2},
+  {q:"After Thomas Blood, other criminals tried to steal the Crown Jewels.", o:["True","False","Not Stated"], a:1}
+ ]},
+
+{id:"beckham", title:"David Beckham",
+ text:`David Beckham was born on May 2, 1975, in London. His father was a kitchen fitter and his mother a hair stylist. From childhood David was a promising footballer. At 11 he won the prestigious Bobby Charlton Soccer Schools National Skills Competition. By the age of 16, Beckham had to drop out of school to play for Manchester United.
+
+From 1992 to 2003, playing for Manchester United, David Beckham scored 85 goals. Every time he had a game, he wore different football boots — it was a ritual for good luck. In 2003 he unexpectedly left for Real Madrid after a growing conflict with manager Sir Alex Ferguson. At Real Madrid, David was not allowed to wear his favourite number seven, so he wore number 23 — the number of his favourite basketball player Michael Jordan. In 2007 Beckham signed a contract for the Los Angeles Galaxy.
+
+David Beckham has always been a devoted husband and a loving father. He and his wife Victoria have three sons and a daughter. Their sons practice Taekwondo, boxing and karate — to protect their little sister when she gets older.`,
+ questions:[
+  {q:"David Beckham's parents were professional sportsmen.", o:["True","False","Not Stated"], a:1},
+  {q:"David Beckham's school teachers supported his interest in football.", o:["True","False","Not Stated"], a:2},
+  {q:"When he was with Manchester United, David Beckham played all games in the same lucky boots.", o:["True","False","Not Stated"], a:1},
+  {q:"David Beckham left Manchester United because he had problems with the team manager.", o:["True","False","Not Stated"], a:0},
+  {q:"David Beckham wore the same shirt number in Manchester United and Real Madrid.", o:["True","False","Not Stated"], a:1},
+  {q:"David Beckham left Real Madrid for an American football club.", o:["True","False","Not Stated"], a:0},
+  {q:"The Beckhams' sons want to become professional sportsmen.", o:["True","False","Not Stated"], a:2}
+ ]},
+
+{id:"octopus", title:"Oliver the Odd Octopus",
+ text:`"What's that creature?" Lisa could not take her eyes off something swimming in Ken's fish tank. Ken's father was a marine biologist and his mother worked as a vet. "Oh, this is Oliver. He's an octopus," said Ken. He tapped his fingers on the glass and the octopus immediately approached. Then the octopus disappeared — it had changed its colour to sandy brown to match the sand in the tank. In the wild, this trick helps octopuses hide from sharks.
+
+"He can also squeeze through a very small hole," said Ken. He put his hand with a snack into the water and blocked Oliver's way with a large plastic plate with small holes. Though Lisa thought Oliver would never get through, Oliver moved through a hole as if he were liquid. "It's easy because he has no bones," explained Ken.
+
+Ken's father had been studying octopuses and found they are very smart — they can learn by watching, figure out how to open a jar or untie a knot. According to Ken's father, octopuses are cleverer and more resourceful than dogs and cats.`,
+ questions:[
+  {q:"Both Ken's parents worked as scientists in a biological laboratory.", o:["True","False","Not Stated"], a:1},
+  {q:"Ken and Lisa were classmates.", o:["True","False","Not Stated"], a:2},
+  {q:"Lisa lost sight of Oliver because the octopus had jumped out of the fish tank.", o:["True","False","Not Stated"], a:1},
+  {q:"Oliver managed to get through a small hole to get his snack.", o:["True","False","Not Stated"], a:0},
+  {q:"The fact that octopuses have no bones was new to Lisa.", o:["True","False","Not Stated"], a:0},
+  {q:"Ken's father found out that octopuses were able to count to ten.", o:["True","False","Not Stated"], a:2},
+  {q:"Ken's father believed that octopuses were smarter than dogs.", o:["True","False","Not Stated"], a:0}
+ ]},
+
+{id:"nightingale", title:"Florence Nightingale",
+ text:`Florence Nightingale was a celebrated English nurse and writer. She was born into a rich, upper-class family in 1820 in Italy. She got her name Florence after the city of her birth. Despite the intense anger of her family, in 1844 Florence decided to become a nurse. At that time nursing was seen as a job that needed neither education nor special skills.
+
+In 1854 the Crimean War broke out and Florence offered her services with thirty-eight volunteer nurses. She found that hygiene was neglected and fatal infections were common. She was on her feet for twenty hours a day and was called 'The Lady with the Lamp' for her habit of making rounds at night.
+
+Florence returned to England in 1856. She persuaded Queen Victoria of the need to create a military hospital system and set up the first nursing school in the world — now called The Florence Nightingale School of Nursing. International Nurses Day is celebrated on her birthday, 12th May. In the Crimea, Nightingale got 'Crimean fever' and never fully recovered. Nevertheless, she continued working from her bed. Florence Nightingale died in London in 1910, at the age of ninety. The government offered to bury her in Westminster Abbey, but her relatives did not agree.`,
+ questions:[
+  {q:"Florence Nightingale was named in honour of her birthplace.", o:["True","False","Not Stated"], a:0},
+  {q:"Florence's family fully supported her decision to become a nurse.", o:["True","False","Not Stated"], a:1},
+  {q:"Florence Nightingale went to the Crimea with a group of volunteer nurses.", o:["True","False","Not Stated"], a:0},
+  {q:"Florence Nightingale set up the first nursing school in the world.", o:["True","False","Not Stated"], a:0},
+  {q:"Florence Nightingale continued working even when she was seriously ill.", o:["True","False","Not Stated"], a:0},
+  {q:"Florence Nightingale was buried in Westminster Abbey.", o:["True","False","Not Stated"], a:1},
+  {q:"Several films were made about Florence Nightingale's life.", o:["True","False","Not Stated"], a:0}
+ ]},
+
+{id:"jeans", title:"Jeans",
+ text:`The history of jeans goes as far back as the 16th century when sailors in Genoa, Italy, wore a material that eventually became the material used in jeans. The word 'jean' derives from the name of the Italian port city Genoa.
+
+It was the California Gold Rush of 1849 that started the evolution of American trousers that would one day become blue jeans. The gold miners wanted clothes that were strong and did not tear easily. Levi Strauss, a German businessman, decided to make trousers out of the tough canvas he was selling for tents. The miners liked the new 'working' trousers, though they were uncomfortable as the material was too rough.
+
+To improve the trousers, Levi Strauss found a different material in France — called 'serge de Nimes', shortened to 'denim'. Original denim was almost white and the trousers got dirty quickly. For that reason Levi Strauss chose dark blue — and 'Blue jeans' had arrived! Things changed when western movies became popular and cowboys wore jeans looking heroic and cool. Jeans were also greatly popularised in Europe by American off-duty soldiers during World War II. In the 2000s, the sale of classic blue jeans stopped growing — young people turned to new cuts, shapes and styles.`,
+ questions:[
+  {q:"Jeans cloth was named after a city.", o:["True","False","Not Stated"], a:0},
+  {q:"Levi Strauss had a few friends among gold miners.", o:["True","False","Not Stated"], a:2},
+  {q:"Levi Strauss began to make trousers for miners from the material used for tents.", o:["True","False","Not Stated"], a:0},
+  {q:"Levi Strauss found denim in a local American shop.", o:["True","False","Not Stated"], a:1},
+  {q:"The original colour of denim was blue.", o:["True","False","Not Stated"], a:1},
+  {q:"After World War II jeans became popular with Europeans.", o:["True","False","Not Stated"], a:0},
+  {q:"Nowadays more jeans are produced in Europe than in the USA.", o:["True","False","Not Stated"], a:2}
+ ]},
+
+{id:"kamchatka", title:"Kamchatka",
+ text:`When I think back to my journey to Kamchatka, it feels like I visited another world. My job involves lots of travelling — I'm a wildlife photographer. It is a peninsula in the far east of Russia, very far from big cities, and not a popular tourist destination. People usually get there by boat or by helicopter.
+
+Kamchatka has more than three hundred volcanoes, and some are still active. When I saw smoke rising from the crater of Klyuchevskaya Sopka, the highest volcano in Eurasia, I felt both afraid and excited. Walking on the black volcanic soil was like walking on another planet.
+
+The Valley of Geysers had about 40 to 90 geysers. Some erupt every 15 minutes; others, once in a few hours. In 2007 a large landslide dramatically changed the landscape and formed a new lake — Geysernaya Lake. Tourists are allowed there in very small quantities, usually taken by helicopter, and must use special walking paths. Kamchatka has the highest concentration of brown bears in the world. In summer, you can see dozens of bears fishing for salmon in the same river at the same time.`,
+ questions:[
+  {q:"The narrator's job keeps him in his office most of the time.", o:["True","False","Not Stated"], a:1},
+  {q:"The narrator got to Kamchatka by helicopter.", o:["True","False","Not Stated"], a:2},
+  {q:"The narrator did not see any smoking volcanoes during his trip.", o:["True","False","Not Stated"], a:1},
+  {q:"According to the guide, the water from the geysers was suitable for drinking.", o:["True","False","Not Stated"], a:2},
+  {q:"Geysernaya Lake is a man-made lake.", o:["True","False","Not Stated"], a:1},
+  {q:"The number of tourists who can visit the Valley of Geysers is restricted.", o:["True","False","Not Stated"], a:0},
+  {q:"According to the narrator, there is a large population of brown bears on Kamchatka.", o:["True","False","Not Stated"], a:0}
+ ]},
+
+{id:"marktwain", title:"Mark Twain",
+ text:`Mark Twain wrote 'The Adventures of Huckleberry Finn' in 1884. Since then, the book has been published in at least sixty languages. The writer's real name was Samuel Clemens. He grew up in Missouri on the Mississippi River. He became a pilot on a steamboat and heard the riverboat workers call out "mark twain!" — a measure for the depth of water. Later he used this as his pen-name.
+
+In 1861 Clemens became a reporter and wrote news stories under the pen-name Mark Twain. His style was friendly, funny and often satirical. 'The Adventures of Tom Sawyer' was published in 1876, and soon after he began writing a sequel. It took Mark Twain longer to write 'The Adventures of Huckleberry Finn' than any of his other books — he started in 1876, put it away for years, and finally published it in 1884.
+
+From the beginning the book was strongly debated. Some critics praised its realism and honesty; others strongly disliked it. They protested against Huck — a rough, dirty and disobedient boy. They also disliked the way Mark Twain used the language of a common, uneducated person. Today there is no longer any debate. In 1935 Ernest Hemingway wrote that all modern American literature comes from one book by Mark Twain. More than 20 screen versions of the book have been made in America, Europe, Russia and Japan.`,
+ questions:[
+  {q:"'The Adventures of Huckleberry Finn' has been translated into many languages.", o:["True","False","Not Stated"], a:0},
+  {q:"The writer took his pen-name when working as an assistant to a publisher.", o:["True","False","Not Stated"], a:1},
+  {q:"'The Celebrated Jumping Frog of Calaveras County' is still on the reading list for American school children.", o:["True","False","Not Stated"], a:2},
+  {q:"It took Mark Twain two years to write 'The Adventures of Huckleberry Finn'.", o:["True","False","Not Stated"], a:1},
+  {q:"Literary critics expressed different opinions of 'The Adventures of Huckleberry Finn'.", o:["True","False","Not Stated"], a:0},
+  {q:"Ernest Hemingway strongly criticised 'The Adventures of Huckleberry Finn'.", o:["True","False","Not Stated"], a:1},
+  {q:"The first film on the novel was shot in Europe.", o:["True","False","Not Stated"], a:2}
+ ]},
+
+{id:"tea", title:"Tea",
+ text:`Everybody knows that Britain is a tea-drinking nation. Tea is more than just a drink to the British — it is a way of life. Many people drink it with breakfast, mid-morning, with lunch, at tea-time (around 5 o'clock), with dinner and before bed. As a nation, the British go through 185 million cups per day! No less than 77% of British people are regular tea drinkers.
+
+Tea came to Britain in the 17th century. Tea drinking became fashionable after Charles II married the Portuguese princess Catherine of Braganza, who adored tea. Tea was an expensive product — only for the rich. The custom of eating 'afternoon tea' began during the 1700s, started by the Duchess Anna Maria of Bedford who began asking for tea and light snacks at 5 pm. The first tea shop for ladies was opened by Thomas Twining in 1717.
+
+It was believed that tea cured lots of diseases. During World War II the government was seriously afraid that the country's morale could suffer from the lack of tea and made a special decision to ration it. Tea has worked its way into language — 'a storm in a teacup,' 'tea and sympathy', tea breaks. In fact, tea is the best treatment for all sorts of problems.`,
+ questions:[
+  {q:"In general British people prefer coffee to tea.", o:["True","False","Not Stated"], a:1},
+  {q:"In the 17th century a Chinese Emperor sent tea to the British royal family as a present.", o:["True","False","Not Stated"], a:1},
+  {q:"Tea became popular in Great Britain due to the royal marriage.", o:["True","False","Not Stated"], a:0},
+  {q:"The 'afternoon tea' tradition was started by a woman.", o:["True","False","Not Stated"], a:0},
+  {q:"In the first tea shops the British could also buy some medicines.", o:["True","False","Not Stated"], a:2},
+  {q:"During World War II the British government prohibited drinking tea.", o:["True","False","Not Stated"], a:1},
+  {q:"There are many phrases with 'tea' in the English language.", o:["True","False","Not Stated"], a:0}
+ ]},
+
+{id:"hershey", title:"Hershey's Chocolate",
+ text:`People from all over the world like the taste of chocolate. You may like dark or milk chocolate, but whatever your tastes, you will certainly enjoy the chocolate produced by the Hershey Company. Hershey chocolate became famous thanks to Milton Hershey, the founder of the company.
+
+Milton Hershey grew up in Pennsylvania, USA. His mother believed practice is more important than college education, so she arranged for him to become a printer's assistant. Milton didn't like the job and left. He became an assistant in a candy factory and became very successful. After a few years he started the Lancaster Caramel Company. Within a few years he was selling his caramels all over the country.
+
+In 1900 Milton Hershey sold his caramel company and started a chocolate factory. Milton built a whole town around the factory — with houses, schools, churches and stores. The factory produced the Nickel Bar, a relatively cheap chocolate bar that everyone could afford. As success and profits rose, Milton Hershey invested more money and added a sports arena, a stadium, and a school for orphaned children. He died in 1945, having donated most of his money to his town and the school for orphans. His chocolate factory remains the largest in the world and the town draws more than 30 million visitors each year.`,
+ questions:[
+  {q:"The Hershey company was named after the man who had started it.", o:["True","False","Not Stated"], a:0},
+  {q:"Milton Hershey tried some other jobs before he started making chocolate.", o:["True","False","Not Stated"], a:0},
+  {q:"Milton Hershey's mother ran a small business of her own.", o:["True","False","Not Stated"], a:2},
+  {q:"Milton Hershey produced his chocolate in strict accordance with the Swiss recipe.", o:["True","False","Not Stated"], a:1},
+  {q:"The Nickel Bar was expensive chocolate for elite customers.", o:["True","False","Not Stated"], a:1},
+  {q:"Milton Hershey gave lots of money to charity.", o:["True","False","Not Stated"], a:0},
+  {q:"It was Milton Hershey's idea to create Hershey Park.", o:["True","False","Not Stated"], a:2}
+ ]},
+
+{id:"openwindow", title:"The Open Window",
+ text:`Mr. Nuttel, a young gentleman, came to live in the country — the doctors said complete rest could help cure his nerves. He didn't know anyone round there. His sister gave him letters of introduction to some nice people she knew.
+
+One of the letters was to Mrs. Sappleton. Mr. Nuttel was asked to wait and met Mrs. Sappleton's niece, a very self-confident young lady of fifteen. She pointed at the open French window and told a story of a great tragedy: three years ago Mrs. Sappleton's husband and sons had gone hunting and never came back. Mr. Nuttel felt very upset.
+
+When Mrs. Sappleton appeared, she apologized and asked if he minded the open window, saying her husband and sons would soon be home from hunting. Suddenly Mrs. Sappleton cried happily pointing at the window: "Here they are at last!" Three male figures were walking across the lawn. Shocked and afraid, Mr. Nuttel grabbed his stick and hat and rushed out of the house. The niece explained that it was because of the dog — once, a dog had seriously bitten Mr. Nuttel. The young lady was so good at making up stories!`,
+ questions:[
+  {q:"Mr. Nuttel came to the village to improve his health.", o:["True","False","Not Stated"], a:0},
+  {q:"Mr. Nuttel was an old friend of Mrs. Sappleton.", o:["True","False","Not Stated"], a:1},
+  {q:"According to Mrs. Sappleton's niece, a great tragedy had happened in her aunt's family three years before.", o:["True","False","Not Stated"], a:0},
+  {q:"Mrs. Sappleton's niece could speak French fluently.", o:["True","False","Not Stated"], a:2},
+  {q:"That afternoon Mrs. Sappleton was waiting for her husband and sons to return from hunting.", o:["True","False","Not Stated"], a:0},
+  {q:"Mr. Nuttel cheerfully greeted Mr. Sappleton and his sons.", o:["True","False","Not Stated"], a:1},
+  {q:"Mr. Nuttel ran out of the house because he was afraid of the dog.", o:["True","False","Not Stated"], a:1}
+ ]},
+
+{id:"glastonbury", title:"Glastonbury Festival",
+ text:`Glastonbury Festival is one of the largest open-air music and art festivals in the world. Its programme includes music, dance, comedy, theatre, circus and other arts. The festival organiser, Michael Eavis, was a common farmer. In 1970 he visited an open-air concert which greatly impressed him, so he decided to organise a big festival. At the first festival there were more than one thousand people. Each paid £1 for the ticket. The price included free milk from the farm.
+
+The festival takes place in southwest England in the Valley of Avalon. Legends say that here King Arthur's sword was made and the king himself was buried there. Most people stay at Glastonbury in tents. There are lots of different camping areas to choose from — quiet or lively, for families or for disabled people. Glastonbury Festival supports Greenpeace. All cans, glass, paper and other waste are separated and recycled. Visitors are asked to clean after themselves.
+
+Today an average ticket is about £200 for three days. Nevertheless, the tickets are sold out in two or three hours. There are usually more people wishing to attend than there are tickets.`,
+ questions:[
+  {q:"Michael Eavis was fond of country music.", o:["True","False","Not Stated"], a:2},
+  {q:"Michael Eavis started the festival to earn money.", o:["True","False","Not Stated"], a:1},
+  {q:"Nowadays Glastonbury festival is held in King Arthur's museum.", o:["True","False","Not Stated"], a:1},
+  {q:"Famous musicians and singers take part in Glastonbury Festival.", o:["True","False","Not Stated"], a:2},
+  {q:"During the festival all the visitors stay in the nearby country inns.", o:["True","False","Not Stated"], a:1},
+  {q:"Glastonbury Festival is an environmentally-friendly event.", o:["True","False","Not Stated"], a:0},
+  {q:"It's recommended to reserve tickets to Glastonbury Festival beforehand.", o:["True","False","Not Stated"], a:0}
+ ]},
+
+{id:"hermitage", title:"Hermitage Cats",
+ text:`Hermitage cats have been officially kept in the Winter Palace in St. Petersburg, Russia, since its foundation. They prevented intensive breeding of rats and mice in the State Hermitage Museum. The director of the Hermitage said: "Cats have become a very important part of our Hermitage lives and a significant part of Hermitage Legends."
+
+The history of Hermitage cats started with a cat brought from Holland by Peter the Great. In the XVIII century Empress Elizaveta Petrovna noticed that there were no rats in Kazan because of the large number of cats and ordered some brought to the Winter Palace. The founder of the Hermitage, Empress Catherine II, gave the cats the official status of 'gallery guards'. In the 1960s it was decided that the cats were not needed any more and they were taken away. But soon rats invaded the building. Since then, the museum has never got rid of its cats.
+
+Today, about seventy cats live in the Hermitage. Each cat has its own passport and a veterinary card. They live comfortably in the basement, equipped with small holes to let the cats move freely. Each cat has its own bowl, tray and basket. To control the number of cats, employees sometimes give cats away to city residents, who must present their passport and leave their contact details.`,
+ questions:[
+  {q:"According to its director, the Hermitage is the only museum in Russia where cats are kept officially.", o:["True","False","Not stated"], a:2},
+  {q:"During the reign of Empress Catherine II the cats received the official status.", o:["True","False","Not stated"], a:0},
+  {q:"During the Great Patriotic War the Hermitage cats were taken to Sverdlovsk to guard the works of art.", o:["True","False","Not stated"], a:1},
+  {q:"Nowadays all the cats are settled in the attic of the Hermitage.", o:["True","False","Not stated"], a:1},
+  {q:"The Hermitage cats are taken good care of.", o:["True","False","Not stated"], a:0},
+  {q:"The cats are not allowed to leave the building of the museum.", o:["True","False","Not stated"], a:1},
+  {q:"The new owner of a Hermitage cat can visit the museum free of charge.", o:["True","False","Not stated"], a:2}
+ ]},
+
+{id:"jamieoliver", title:"Jamie Oliver",
+ text:`Jamie Oliver is one of Britain's most famous cooks. His programmes are shown in over 100 countries and have been translated into over 30 languages. His cookery books are bestsellers worldwide.
+
+Jamie Oliver was born in 1975 in England. From an early age he got interested in food. His parents had a pub where he helped in the kitchen from the age of eight. Jamie left school at 16 without any official certificate and travelled to France to master the art of cooking. After returning, he worked in British restaurants. At that time there was a TV programme about the café where Jamie worked — TV producers were impressed by the young chef. The next day Jamie received calls from five different TV companies. He soon became the best-liked celebrity chef on television.
+
+Jamie devotes his time not only to cooking. He created the 'Fifteen Foundation', where each year fifteen young people — some from unhappy families, some who were in prison or took drugs — are trained to work in the restaurant business. Another project is connected with school dinners: he wants school children to eat healthy food. The British government spent extra 280 million pounds to improve school meals. Every book by Jamie Oliver immediately becomes a bestseller.`,
+ questions:[
+  {q:"Jamie's parents wanted their son to be a professional cook.", o:["True","False","Not Stated"], a:2},
+  {q:"Jamie Oliver went to France to continue studying economics.", o:["True","False","Not Stated"], a:1},
+  {q:"Jamie Oliver has become a well-known personality due to his TV show.", o:["True","False","Not Stated"], a:0},
+  {q:"Jamie's wife was against his project 'Fifteen Foundation'.", o:["True","False","Not Stated"], a:2},
+  {q:"Jamie's project 'Fifteen Foundation' gives people a chance to improve their lives.", o:["True","False","Not Stated"], a:0},
+  {q:"The British government ignored Jamie's school meals project.", o:["True","False","Not Stated"], a:1},
+  {q:"Jamie Oliver is a successful writer.", o:["True","False","Not Stated"], a:0}
+ ]},
+
+{id:"wren", title:"Sir Christopher Wren",
+ text:`Sir Christopher Wren was a designer, astronomer, geometer, and one of the greatest English architects. Christopher Wren was born into a rich family in 1632. He was a weak and sickly child and was taught at home by private tutors and his father. There is written evidence that he entered Oxford University in 1650 to study science and mathematics. On graduating, Wren was appointed Professor of Astronomy at Gresham College, London. His lectures were free to all who wished to attend. His lectures and discussions led to establishing the Royal Society, England's first scientific organization.
+
+In Wren's time, the profession of an architect did not exist. Well-educated gentlemen often took up architecture as a hobby. Wren designed 51 London churches, including St Paul's Cathedral, after the Great Fire in 1666. He insisted on the finest materials, and only skillful workers were hired.
+
+St Paul's Cathedral is still Wren's masterpiece — a beautiful mix of the Medieval, Classical, and Baroque styles. The foundation stone was laid in 1675 when Wren was 43, and the last stone was put in place by his son, 35 years later. Wren died on 25th February 1723. His gravestone features a Latin inscription which translates as: 'If you seek his memorial, look about you.'`,
+ questions:[
+  {q:"Christopher Wren was named after his father.", o:["True","False","Not Stated"], a:2},
+  {q:"There is no proof that Christopher Wren studied at Oxford University.", o:["True","False","Not Stated"], a:1},
+  {q:"Christopher Wren's scientific interests were in different spheres.", o:["True","False","Not Stated"], a:0},
+  {q:"The profession of an architect was very popular in the 17th century.", o:["True","False","Not Stated"], a:1},
+  {q:"Christopher Wren was demanding when choosing materials and builders.", o:["True","False","Not Stated"], a:0},
+  {q:"Christopher Wren's son completed the construction of St Paul's Cathedral.", o:["True","False","Not Stated"], a:0},
+  {q:"St Paul's Cathedral was Sir Christopher Wren's favourite project.", o:["True","False","Not Stated"], a:2}
+ ]},
+
+{id:"taxi", title:"A Trip of Her Life",
+ text:`The story happened in New York. Max, a taxi driver, was doing his last trip that day. He arrived on time but nobody came out. He was thinking of driving home, but something made him park and check the door. A small lady of about ninety opened it. She was wearing an old-fashioned dress and a veiled hat — like a film star of the forties. She asked Max to help her with a heavy suitcase. He came in and noticed all the furniture was covered with cloth. There were no ornaments on the shelves. In the corner was a large box filled with old photos and books. She was going to hospital.
+
+She asked Max to drive through the city centre though it involved extra time. She said she was not in a hurry. She told Max her family had left long before and the doctor said her chances were not good. Her eyes filled with tears. Max switched off the counter and asked which route she preferred. For two hours they were driving through the city. She showed Max the building she had worked in, the dance hall she had visited as a girl, and the district she had lived in with her husband.
+
+When they arrived at the hospital, Max refused to take any money. He bent down and embraced the old lady. "Thank you for the little happiness you gave me," she whispered. On his way home Max drove in silence. He had an impression that it was the most important trip of his life.`,
+ questions:[
+  {q:"Max was late to pick up his client.", o:["True","False","Not Stated"], a:1},
+  {q:"The old lady was a former actress.", o:["True","False","Not Stated"], a:2},
+  {q:"The old lady was grateful to Max for his help.", o:["True","False","Not Stated"], a:0},
+  {q:"The lady chose the shortest way to the hospital.", o:["True","False","Not Stated"], a:1},
+  {q:"Max drove the old lady to the places which were very special to her.", o:["True","False","Not Stated"], a:0},
+  {q:"The hospital was in the countryside.", o:["True","False","Not Stated"], a:2},
+  {q:"Max refused to take money for the trip from the old lady.", o:["True","False","Not Stated"], a:0}
+ ]}
+];
+
+/* ════════════════════════════════════════════
+   GRAMMAR TASKS — из ФИПИ 2026 + база
+════════════════════════════════════════════ */
+const grammarTasks=[
+  {b:"BUY",       s:"His parents _______ him his first computer at the age of six.",          a:"bought"},
+  {b:"FAST",      s:"His mum said that younger people were much _______ than adults.",        a:"faster"},
+  {b:"CHILD",     s:"Most _______ in Michael's class were competent computer users.",         a:"children"},
+  {b:"INVENT",    s:"Michael was surprised that the first personal computer _______ in the 70s.", a:"was invented"},
+  {b:"NOT SEND",  s:"We _______ each other e-mails. And there were no networks.",            a:"didn't send"},
+  {b:"LEAVE",     s:"Judy was afraid of the dark. At night she always _______ the lights on.", a:"left"},
+  {b:"NOT BELIEVE",s:"She _______ in monsters or in ghosts.",                                a:"didn't believe"},
+  {b:"BAD",       s:"Everyone in her family knew that a dark room was the _______ of her fears.", a:"worst"},
+  {b:"MAKE",      s:"In the first package were nice slippers. They _______ from soft, pink fabric.", a:"were made"},
+  {b:"WALK",      s:"\"I _______ along the central avenue when I saw a group of people,\" she said.", a:"was walking"},
+  {b:"APPROVE",   s:"Yesterday, the plan _______ by the City Council and work starts tomorrow.", a:"was approved"},
+  {b:"FOX",       s:"There will be wild animals there like hares, squirrels and even _______.", a:"foxes"},
+  {b:"FOOT",      s:"Tom was only wearing shorts and a pair of sandals on his _______ but felt hot anyway.", a:"feet"},
+  {b:"NOT BE",    s:"When they came to the beach, they found out that the sea _______ calm — powerful waves were breaking.", a:"wasn't"},
+  {b:"HOT",       s:"\"It's getting _______ every minute,\" said Gary. \"How about a swim?\"", a:"hotter"},
+  {b:"THREE",     s:"The _______ wave hit him hard and he lost his balance.",                 a:"third"},
+  {b:"YOUNG",     s:"She was four years _______ than me, but we had a lot in common.",        a:"younger"},
+  {b:"NOT LIKE",  s:"When I caught up with her, she was reading a magazine and _______ at me.", a:"didn't look"},
+  {b:"FIFTEEN",   s:"At first, making a party to celebrate her _______ birthday looked like an easy thing.", a:"fifteenth"},
+  {b:"WRITE",     s:"Each name _______ carefully on glossy paper.",                           a:"was written"},
+  {b:"HAVE",      s:"Tim woke up later than usual. It was Sunday and he _______ lots of plans for the day.", a:"had"},
+  {b:"STEAL",     s:"Holmes was silent for a moment and then said: \"Someone _______ our tent!\"", a:"has stolen"},
+  {b:"WAKE",      s:"That night, Holmes _______ up and asked: 'Watson, look up and tell me what you see.'", a:"woke"},
+  {b:"SEE",       s:"Watson said that he _______ millions of stars.",                         a:"could see"},
+  {b:"CHOOSE",    s:"When Mum asked me what book I wanted, I always _______ a book by Dahl.", a:"chose"},
+  {b:"PUBLISH",   s:"Roald Dahl started as an adult writer. His first book _______ in 1942.", a:"was published"},
+  {b:"BRING",     s:"When my parents _______ me to Canada, I was fifteen.",                  a:"brought"},
+  {b:"IMPRESS",   s:"It was the winter and I _______ by the amount of snow there.",           a:"was impressed"},
+  {b:"FALL",      s:"When I was left alone on the ice, I _______ over immediately.",          a:"fell"},
+  {b:"LOSE",      s:"In the end, we _______ hope. Two weeks later I was passing by our old house.", a:"lost"},
+  {b:"BUILD",     s:"This house _______ in 1995.",                                            a:"was built"},
+  {b:"JUST FINISH",s:"I _______ my homework.",                                               a:"have just finished"},
+  {b:"NEVER BE",  s:"She _______ to Paris.",                                                  a:"has never been"},
+  {b:"GOOD",      s:"This is the _______ book I have ever read!",                             a:"best"},
+  {b:"INTERESTING",s:"This museum is _______ than that one.",                                a:"more interesting"},
+  {b:"CARE",      s:"Be _______ when you cross the road!",                                    a:"careful"},
+  {b:"NATION",    s:"English is an _______ language used in many countries.",                 a:"international"},
+  {b:"USE",       s:"Learning languages is not only interesting but very _______ too.",        a:"useful"},
+  {b:"IMAGINE",   s:"Foreign languages improve memory and develop _______.",                  a:"imagination"},
+  {b:"FLUENT",    s:"People who speak two or more languages _______ are usually more successful.", a:"fluently"},
+  {b:"CREATE",    s:"Bilingual people are more _______ and better at solving conflicts.",     a:"creative"},
+  {b:"PERSON",    s:"They are better at making business and _______ contacts.",               a:"personal"},
+  {b:"NOT KNOW",  s:"\"I _______ what to start with!\" Mary called her cousin and asked for help.", a:"didn't know"},
+  {b:"FIFTEEN",   s:"Mary's _______ birthday looked like an easy thing to organise — but wasn't!", a:"fifteenth"},
+  {b:"HAPPY",     s:"She is the _______ person I know.",                                      a:"happiest"},
+  {b:"TOOTH",     s:"Tim was in the bathroom cleaning his _______ when he heard some unfamiliar voices.", a:"teeth"},
+  {b:"ALREADY DO", s:"We _______ this exercise.",                                             a:"have already done"},
+  {b:"STORY",     s:"Many of the _______ are based on Dahl's own childhood memories.",        a:"stories"},
+  {b:"MOUSE",     s:"Judy never screamed when she saw spiders, _______ and frogs.",           a:"mice"}
+];
+
+/* ════════════════════════
+   STATE & LOGIC
+════════════════════════ */
+let cq=[],ua={},sc=0,tq=0;
+const colors=['clr-blue','clr-green','clr-yellow','clr-purple','clr-red'];
+
+function shuffle(a){const r=[...a];for(let i=r.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[r[i],r[j]]=[r[j],r[i]];}return r;}
+
+function startTest(){
+  document.getElementById('start-screen').classList.add('hidden');
+  document.getElementById('test-area').classList.remove('hidden');
+  cq=[];ua={};sc=0;
+
+  // Reading: 15 questions — каждый раз разные тексты и вопросы
+  let cnt=0;
+  for(const t of shuffle([...readingTasks])){
+    if(cnt>=15) break;
+    for(const q of shuffle([...t.questions])){
+      if(cnt>=15) break;
+      cq.push({type:'reading',title:t.title,text:t.text,question:q.q,options:q.o,answer:q.a});
+      cnt++;
+    }
+  }
+  // Grammar: 15 — каждый раз разные
+  for(const g of shuffle([...grammarTasks]).slice(0,15))
+    cq.push({type:'grammar',base:g.b,ctx:g.s,answer:g.a.toLowerCase().trim().replace(/\s+/g,' ')});
+
+  tq=cq.length;
+  render();
+  updateProg();
+}
+
+function render(){
+  const cont=document.getElementById('qcont');cont.innerHTML='';
+  cq.forEach((q,i)=>{
+    const card=document.createElement('div');
+    card.className='card '+colors[i%colors.length];
+    card.id='qc'+i;card.style.animationDelay=`${i*.03}s`;
+
+    const badge=q.type==='reading'
+      ?`<span class="badge b-read">📖 Чтение — ${q.title}</span>`
+      :'<span class="badge b-gram">✏️ Грамматика</span>';
+
+    let h=`<div class="q-num">Задание <em>${i+1}</em> из ${tq}</div>${badge}`;
+
+    if(q.type==='reading'){
+      const paras=q.text.split(/\n+/);
+      const shortHtml=paras[0].length>300?paras[0].slice(0,300)+'…':paras[0];
+      const fullHtml=paras.map(p=>`<p style="margin-bottom:.8em">${p}</p>`).join('');
+      const needBtn=q.text.length>300;
+      h+=`<div class="rd-wrap"><div class="rd-text" id="rt${i}">${needBtn?shortHtml:fullHtml}</div>`;
+      if(needBtn) h+=`<button class="expand-btn" id="ex${i}" onclick="expand(${i},\`${encodeURIComponent(fullHtml)}\`)">📄 Читать весь текст</button>`;
+      h+=`</div><p class="q-text">${q.question}</p><div class="opts">${q.options.map((o,k)=>`<button class="opt" onclick="chkA(${i},${k},this)">${o}</button>`).join('')}</div>`;
+    } else {
+      const ctx=q.ctx.replace('_______','<span class="blank">_______</span>');
+      h+=`<div class="gram-wrap">
+        <p class="gram-lbl">Преобразуйте слово <span class="bword">${q.base}</span> так, чтобы оно подходило по смыслу:</p>
+        <p class="gram-ctx">${ctx}</p>
+        <input class="word-in" id="wi${i}" placeholder="Ваш ответ…" autocomplete="off" onkeydown="if(event.key==='Enter') chkG(${i})">
+        <div class="enter-hint">Нажми <span class="kbd">Enter</span> или кнопку</div><br>
+        <button class="btn-chk" id="bc${i}" onclick="chkG(${i})">✔ Проверить</button>
+      </div>`;
+    }
+    h+=`<div id="fb${i}" class="fb"></div>`;
+    card.innerHTML=h;cont.appendChild(card);
+  });
+}
+
+function expand(i,encoded){
+  document.getElementById('rt'+i).innerHTML=decodeURIComponent(encoded);
+  const b=document.getElementById('ex'+i);if(b)b.style.display='none';
+}
+
+function chkA(qi,sel,btn){
+  if(ua[qi]!==undefined) return;
+  const q=cq[qi],fb=document.getElementById('fb'+qi);
+  const all=btn.parentElement.querySelectorAll('.opt');
+  all.forEach(b=>{b.disabled=true;b.style.cursor='default';});
+  ua[qi]=(sel===q.answer);
+  if(sel===q.answer){btn.classList.add('correct');fb.textContent='✅ Правильно! Отлично!';fb.className='fb ok show';sc++;}
+  else{btn.classList.add('wrong');all[q.answer].classList.add('correct');fb.textContent=`❌ Неверно. Правильный ответ: ${q.options[q.answer]}`;fb.className='fb err show';}
+  updateProg();chkDone();
+}
+
+function chkG(qi){
+  if(ua[qi]!==undefined) return;
+  const inp=document.getElementById('wi'+qi),bc=document.getElementById('bc'+qi);
+  const val=inp.value.trim().toLowerCase().replace(/\s+/g,' ');
+  const q=cq[qi],fb=document.getElementById('fb'+qi);
+  ua[qi]=(val===q.answer);
+  if(val===q.answer){inp.classList.add('correct');fb.textContent='✅ Верно! Молодец!';fb.className='fb ok show';sc++;}
+  else{inp.classList.add('wrong');fb.textContent=`❌ Ошибка. Правильно: ${q.answer}`;fb.className='fb err show';}
+  inp.disabled=true;if(bc)bc.disabled=true;
+  updateProg();chkDone();
+}
+
+function updateProg(){
+  const d=Object.keys(ua).length,p=(d/tq)*100;
+  document.getElementById('prog-fill').style.width=p+'%';
+  document.getElementById('prog-cnt').textContent=`${d}/${tq}`;
+}
+function chkDone(){if(Object.keys(ua).length===tq)document.getElementById('finish-btn').disabled=false;}
+
+function finishTest(){
+  const p=Math.round((sc/tq)*100);
+  document.getElementById('s-pct').textContent=p+'%';
+  document.getElementById('s-frc').textContent=`${sc} из ${tq}`;
+  setTimeout(()=>{document.getElementById('r-fill').style.strokeDashoffset=471-(p/100)*471;},150);
+
+  let msg;
+  if(p>=90)msg='🏆 Феноменально!\nТы готов к ОГЭ на отлично!';
+  else if(p>=75)msg='🌟 Отличный результат!\nЕщё немного — и идеал!';
+  else if(p>=50)msg='💪 Неплохо!\nПовтори слабые темы!';
+  else msg='😤 Не сдавайся!\nПрактика — ключ к успеху!';
+  document.getElementById('s-msg').textContent=msg;
+
+  let rW=0,rT=0,gW=0,gT=0;
+  cq.forEach((q,i)=>{if(q.type==='reading'){rT++;if(!ua[i])rW++;}else{gT++;if(!ua[i])gW++;}});
+  const ul=document.getElementById('s-list');ul.innerHTML='';
+  if(p===100){ul.innerHTML='<li>🎉 Идеально — ни одной ошибки! Ты звезда!</li>';confetti();}
+  else{
+    if(rW>0)ul.innerHTML+=`<li><strong>📖 Чтение:</strong> ${rW} из ${rT} неверно. Совет: ищи синонимы в тексте, не ищи точные слова из вопроса.</li>`;
+    if(gW>0)ul.innerHTML+=`<li><strong>✏️ Грамматика:</strong> ${gW} из ${gT} неверно. Повтори: времена, пассивный залог, словообразование.</li>`;
+    if(!rW&&!gW)ul.innerHTML='<li>✨ Все ответы правильные!</li>';
+  }
+  document.getElementById('modal').style.display='flex';
+}
+
+function goHome(){
+  document.getElementById('modal').style.display='none';
+  document.getElementById('test-area').classList.add('hidden');
+  document.getElementById('start-screen').classList.remove('hidden');
+  cq=[];ua={};sc=0;tq=0;
+}
+
+function confetti(){
+  const cols=['#ff3d6e','#ff8800','#ffe600','#00cc88','#00b4f5','#b24fff'];
+  for(let i=0;i<90;i++)setTimeout(()=>{
+    const el=document.createElement('div');el.className='conf';
+    const sz=7+Math.random()*12;
+    el.style.cssText=`left:${Math.random()*100}vw;top:-12px;width:${sz}px;height:${sz}px;background:${cols[Math.floor(Math.random()*cols.length)]};border-radius:${Math.random()>.4?'50%':'3px'};animation-duration:${2+Math.random()*2.5}s;border:2px solid rgba(0,0,0,.15);`;
+    document.body.appendChild(el);setTimeout(()=>el.remove(),5000);
+  },i*28);
+}
+
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')e.target.style.display='none';});
+</script>
+</body>
+</html>
